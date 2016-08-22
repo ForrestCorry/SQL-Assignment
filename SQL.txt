@@ -1,0 +1,77 @@
+Select Statements:
+-Teachers: SELECT `teacher`.`teacher_id`,
+    `teacher`.`first_name`,
+    `teacher`.`last_name`,
+    `teacher`.`age`,
+    `teacher`.`salary`
+FROM `assignment`.`teacher`;
+
+-Classes: SELECT `class`.`class`,
+    `class`.`name`,
+    `class`.`description`,
+    `class`.`teacher_id`
+FROM `assignment`.`class`;
+
+-Students: SELECT `student`.`student_id`,
+    `student`.`first_name`,
+    `student`.`last_name`,
+    `student`.`grade`,
+    `student`.`gpa`
+FROM `assignment`.`student`;
+
+-Teacher 1 classes: SELECT `class`.`class`,
+    `class`.`name`,
+    `class`.`description`,
+    `class`.`teacher_id`
+FROM `assignment`.`class`
+Where teacher_id = 1;
+
+-Students in class 1: SELECT `class_student`.`class_student_id`,
+    `class_student`.`class_id`,
+    `class_student`.`student_id`
+FROM `assignment`.`class_student`
+
+WHERE class_id = 1;
+
+-Classes for Student 1: SELECT `class_student`.`class_student_id`,
+    `class_student`.`class_id`,
+    `class_student`.`student_id`
+FROM `assignment`.`class_student`
+Where student_id = 1;
+
+-First letter starts with a: SELECT `student`.`student_id`,
+    `student`.`first_name`,
+    `student`.`last_name`,
+    `student`.`grade`,
+    `student`.`gpa`
+FROM `assignment`.`student`
+where first_name like 'B%';
+
+
+
+UPDATE STATEMENTS:
+
+- Teacher 1's name: UPDATE `assignment`.`teacher`
+SET
+`first_name` = 'Superman'
+
+WHERE `teacher_id` = 1;
+
+- class 1's name: UPDATE `assignment`.`class`
+SET
+
+`name` = 'Underwater Basket Weaving'
+
+WHERE `class` = 1;
+SELECT * FROM assignment.class;
+
+- Student 1's name: UPDATE `assignment`.`student`
+SET
+
+`first_name` = 'Wonder',
+`last_name` = 'Woman'
+WHERE `student_id` = 1;
+
+
+DELETE STATEMENT: DELETE FROM `assignment`.`student`
+WHERE student_id = 10;
